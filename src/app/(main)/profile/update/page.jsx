@@ -3,47 +3,66 @@ import FormErrorLabel from "@/components/FormErrorLabel";
 import { Button } from "@/components/ui/button";
 import { Field, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
-import { signIn, updateUser, useSession } from "@/lib/auth-client";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { updateUser, useSession } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
-const LoginPage = () => {
+const ProfileUpdatePage = () => {
+  const router = useRouter();
   const { data, isPending } = useSession();
+
+  const [processing, setProcessing] = useState(false);
 
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      name: "",
+      photoUrl: "",
+    },
+  });
 
-  const router = useRouter();
+  useEffect(() => {
+    if (data?.user) {
+      reset({
+        name: data.user.name || "",
+        photoUrl: data.user.image || "",
+      });
+    }
+  }, [data, reset]);
 
-  // States
-  const [processing, setProcessing] = useState(false);
-
-  const handleUpdateProfile = async (data) => {
-    const { name, photoUrl } = data;
-
+  const handleUpdateProfile = async (formData) => {
     try {
       setProcessing(true);
 
       await updateUser({
-        name,
-        image: photoUrl,
+        name: formData.name,
+        image: formData.photoUrl,
       });
 
-      toast.success("Profile data updated");
+      toast.success("Profile updated successfully");
 
       router.push("/profile");
     } catch (error) {
       console.error(error);
-      toast.error(error?.message);
+      toast.error(error?.message || "Update failed");
     } finally {
       setProcessing(false);
     }
   };
+
+  if (isPending) {
+    return (
+      <section className="w-full py-10 px-3 flex justify-center">
+        <div className="text-sm text-muted-foreground">Loading...</div>
+      </section>
+    );
+  }
 
   return (
     <section className="w-full py-10 px-3 flex justify-center">
@@ -55,32 +74,32 @@ const LoginPage = () => {
           Update Profile
         </h1>
 
+        {/* Name */}
         <Field>
           <FieldLabel htmlFor="name">Name</FieldLabel>
           <Input
-            {...register("name", { required: "Name is required" })}
+            {...register("name", {
+              required: "Name is required",
+            })}
             placeholder="Your name"
-            defaultValue={data?.user?.name || ""}
           />
           {errors?.name && (
-            <FormErrorLabel>{errors.name?.message}</FormErrorLabel>
+            <FormErrorLabel>{errors.name.message}</FormErrorLabel>
           )}
         </Field>
 
+        {/* Photo URL */}
         <Field>
           <FieldLabel htmlFor="photoUrl">Photo URL</FieldLabel>
-          <Input
-            {...register("photoUrl", { required: false })}
-            placeholder="Profile pic URL"
-            defaultValue={session?.data?.user?.image}
-          />
+          <Input {...register("photoUrl")} placeholder="Profile picture URL" />
         </Field>
 
-        <Button type="submit" className={"w-full"} disabled={processing}>
-          {processing ? "Saving..." : "Save"}
+        <Button type="submit" className="w-full" disabled={processing}>
+          {processing ? "Saving..." : "Save Changes"}
         </Button>
       </form>
     </section>
   );
 };
-export default LoginPage;
+
+export default ProfileUpdatePage;
