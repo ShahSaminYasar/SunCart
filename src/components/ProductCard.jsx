@@ -5,13 +5,13 @@ import Link from "next/link";
 
 const ProductCard = ({ product }) => {
   return (
-    <div className="bg-card p-2 rounded-md shadow-lg shadow-black/5 border border-black/5 flex flex-col">
+    <div className="w-full max-w-sm mx-auto bg-card p-2 rounded-md shadow-lg shadow-black/5 border border-black/5 flex flex-col">
       <Image
         src={product?.image}
         width={450}
         height={450}
         alt={product?.name}
-        className="aspect-4/3 object-cover rounded-sm mb-1"
+        className="aspect-4/3 object-cover rounded-sm mb-1 w-full"
       />
 
       <div className="w-full flex flex-col gap-3 p-3 flex-1">
