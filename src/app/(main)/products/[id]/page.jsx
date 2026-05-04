@@ -18,7 +18,7 @@ const page = async ({ params }) => {
   const product = await getProducts(id);
 
   return (
-    <div className="bg-card px-3 py-10">
+    <div className="bg-card px-3 pt-10">
       <div className="container">
         <section className="container flex flex-col gap-8 md:grid md:grid-cols-2 justify-center items-center md:items-start md:gap-10">
           {/* Image */}

@@ -1,9 +1,13 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Button } from "./ui/button";
 import { Menu, ShoppingBag, X } from "lucide-react";
 import { useState } from "react";
+import { signOut, useSession } from "@/lib/auth-client";
+import { Spinner } from "./ui/spinner";
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import { Avatar, AvatarImage } from "./ui/avatar";
 
 const navlinks = [
   {
@@ -22,9 +26,16 @@ const navlinks = [
 
 const Header = () => {
   const pathname = usePathname();
+  const { data, isPending } = useSession();
+  const router = useRouter();
 
   //   States
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleLogout = async () => {
+    await signOut();
+    router.push("/");
+  };
 
   return (
     <>
@@ -48,7 +59,7 @@ const Header = () => {
             className={`bg-background rounded-lg absolute left-0 shadow-sm md:relative md:left-auto md:top-auto p-3 w-full transition-all duration-300 z-50 ${mobileMenuOpen ? "top-20 opacity-100 pointer-events-auto" : "top-17 opacity-0 pointer-events-none"} md:top-auto md:opacity-100 md:pointer-events-auto md:bg-transparent md:shadow-none md:w-fit`}
           >
             <ul
-              className={`text-sm font-medium flex md:gap-7 items-center justify-center flex-col md:flex-row`}
+              className={`text-base font-medium flex md:gap-7 items-center justify-center flex-col md:flex-row`}
             >
               {navlinks?.map((navlink, index) => (
                 <li
@@ -73,9 +84,41 @@ const Header = () => {
               </Link>
             </Button>
 
-            <Button asChild>
-              <Link href={"/login"}>Login</Link>
-            </Button>
+            {isPending ? (
+              <Spinner />
+            ) : data?.user ? (
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Avatar>
+                    <AvatarImage
+                      src={
+                        data?.user?.image ||
+                        "https://cdn-icons-png.freepik.com/512/6596/6596121.png"
+                      }
+                    />
+                  </Avatar>
+                </PopoverTrigger>
+
+                <PopoverContent>
+                  <span>
+                    Logged in as{" "}
+                    <span className="font-semibold">{data?.user?.name}</span>
+                  </span>
+
+                  <Button
+                    variant="destructive"
+                    onClick={handleLogout}
+                    className={"w-full"}
+                  >
+                    Logout
+                  </Button>
+                </PopoverContent>
+              </Popover>
+            ) : (
+              <Button asChild>
+                <Link href={"/login"}>Login</Link>
+              </Button>
+            )}
           </div>
         </div>
       </header>

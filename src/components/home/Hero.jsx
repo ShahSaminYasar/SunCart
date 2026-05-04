@@ -36,6 +36,7 @@ const Hero = () => {
           width={1000}
           height={1000}
           alt="Hero Image"
+          loading="eager"
           className="w-full max-w-md md:max-w-full aspect-square object-cover rounded-lg"
         />
       </div>

@@ -12,7 +12,7 @@ const page = async () => {
     );
 
   return (
-    <section className="px-3 py-10">
+    <section className="px-3 pt-10 pb-16">
       <div className="container">
         <div className="flex justify-between items-center gap-3">
           <h2 className="text-3xl font-medium text-left mb-4 text-foreground">

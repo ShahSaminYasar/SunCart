@@ -17,7 +17,7 @@ const tips = [
         <Sun size={35} />
       </span>
     ),
-    title: "Use sunscreen ☀",
+    title: "Use sunscreen ⛅",
     description:
       "Reapply SPF 30+ every two hours to protect your skin from harmful UV rays.",
   },

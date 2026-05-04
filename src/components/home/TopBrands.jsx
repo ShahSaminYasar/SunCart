@@ -1,6 +1,6 @@
 const TopBrands = () => {
   return (
-    <section className="py-10 px-3 bg-orange-50">
+    <section className="py-20 px-3 bg-orange-50">
       <div className="container">
         <h2 className="text-3xl font-light text-orange-900 mb-10 text-center relative block w-fit mx-auto">
           Top <span className="font-semibold">Brands</span>
