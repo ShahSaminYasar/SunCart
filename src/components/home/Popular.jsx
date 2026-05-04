@@ -7,7 +7,7 @@ const Popular = async () => {
   const products = await getProducts();
 
   return (
-    <section className="pt-20 pb-10 px-3">
+    <section className="py-20 px-3">
       <div className="container">
         <div className="flex justify-between items-center gap-5 mb-8">
           <h2 className="text-3xl md:text-4xl font-semibold text-foreground">

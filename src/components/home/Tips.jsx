@@ -41,20 +41,20 @@ const Tips = () => {
           🌿 Summer Care Tips
         </h2>
 
-        <p className="text-sm font-normal text-card-foreground/70 block text-center mb-10">
+        <p className="text-sm font-normal text-card-foreground/70 block text-center mb-10 max-w-sm mx-auto">
           Essential advice to keep you glowing, hydrated, and protected all
           season long.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="flex flex-row flex-wrap justify-center items-center lg:grid lg:grid-cols-3 gap-4">
           {tips?.map((tip, index) => (
             <div
               key={`tip_${index}`}
-              className="bg-background rounded-md shadow-xl shadow-black/5 border border-black/5 flex flex-col gap-2 px-5 py-7 text-foreground items-center justify-center"
+              className="w-full lg:h-full max-w-sm mx-auto bg-background rounded-md shadow-xl shadow-black/5 border border-black/5 flex flex-col gap-2 px-5 py-7 text-foreground items-center justify-center"
             >
               {tip?.icon}
 
-              <h4 className="text-2xl font-semibold block text-center">
+              <h4 className="text-xl lg:text-2xl font-semibold block text-center">
                 {tip?.title}
               </h4>
 
