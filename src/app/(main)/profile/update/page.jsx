@@ -10,7 +10,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
 const LoginPage = () => {
-  const session = useSession();
+  const { data, isPending } = useSession();
 
   const {
     register,
@@ -19,8 +19,6 @@ const LoginPage = () => {
   } = useForm();
 
   const router = useRouter();
-
-  const searchParams = useSearchParams();
 
   // States
   const [processing, setProcessing] = useState(false);
@@ -62,10 +60,10 @@ const LoginPage = () => {
           <Input
             {...register("name", { required: "Name is required" })}
             placeholder="Your name"
-            defaultValue={session?.data?.user?.name}
+            defaultValue={data?.user?.name || ""}
           />
-          {errors?.email && (
-            <FormErrorLabel>{errors.email?.message}</FormErrorLabel>
+          {errors?.name && (
+            <FormErrorLabel>{errors.name?.message}</FormErrorLabel>
           )}
         </Field>
 
