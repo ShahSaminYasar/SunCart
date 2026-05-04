@@ -27,7 +27,7 @@ const page = async ({ params }) => {
             width={1000}
             height={1000}
             alt={product?.name}
-            className="w-full max-w-md md:max-w-full aspect-square object-cover rounded-lg block sticky top-22"
+            className="w-full max-w-md md:max-w-full aspect-square object-cover rounded-lg block md:sticky md:top-22"
           />
 
           {/* Text Content */}
@@ -61,7 +61,7 @@ const page = async ({ params }) => {
               </span>
             </div>
 
-            <p className="w-full max-w-md text-base text-left block my-3">
+            <p className="w-full max-w-md text-base text-center md:text-left block my-3">
               {product?.description}
             </p>
 
@@ -73,7 +73,7 @@ const page = async ({ params }) => {
               className={"text-base tracking-wider uppercase w-full"}
             >
               <ShoppingBag />
-              Add to Cart
+              Add to Cart (Upcoming)
             </Button>
 
             {/* Extras */}

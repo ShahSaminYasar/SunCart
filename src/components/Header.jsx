@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Button } from "./ui/button";
-import { Menu, ShoppingBag, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { signOut, useSession } from "@/lib/auth-client";
 import { Spinner } from "./ui/spinner";
@@ -78,11 +78,11 @@ const Header = () => {
           </nav>
 
           <div className="flex gap-1 items-center">
-            <Button asChild variant="ghost">
+            {/* <Button asChild variant="ghost">
               <Link href={"/purchases"}>
                 <ShoppingBag size={20} className="text-foreground" />
               </Link>
-            </Button>
+            </Button> */}
 
             {isPending ? (
               <Spinner />

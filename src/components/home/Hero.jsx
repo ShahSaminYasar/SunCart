@@ -10,7 +10,10 @@ const Hero = () => {
         {/* Text Content */}
         <div className="flex flex-col items-center justify-center md:items-start gap-4">
           <h1 className="font-semibold text-6xl lg:text-8xl xl:text-9xl text-wrap text-center md:text-left">
-            SUMMER SALE <span className="text-primary block">50% OFF</span>
+            SUMMER SALE{" "}
+            <span className="text-primary block animate__animated animate__pulse animate__infinite">
+              50% OFF
+            </span>
           </h1>
 
           <p className="w-full max-w-md text-base text-center md:text-left">

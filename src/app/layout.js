@@ -3,6 +3,7 @@ dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import "animate.css";
 import { Toaster } from "react-hot-toast";
 
 const poppins = Poppins({
