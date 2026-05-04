@@ -90,7 +90,7 @@ const LoginPage = () => {
               },
             })}
             type={showPassword ? "text" : "password"}
-            placeholder="Your full name"
+            placeholder="Password"
           />
           <button
             type="button"
