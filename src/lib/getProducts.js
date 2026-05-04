@@ -1,6 +1,6 @@
 "use server";
 
-export async function getProducts() {
+export async function getProducts(id = null) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/data/products.json`,
     { next: { revalidate: 10 } },
@@ -10,5 +10,11 @@ export async function getProducts() {
     return { ok: false, message: "Failed to fetch products data" };
   }
 
-  return res.json();
+  const products = await res.json();
+
+  if (id) {
+    return products.find((p) => p?.id === Number(id));
+  }
+
+  return products;
 }

@@ -66,7 +66,7 @@ const Footer = () => {
           </Link>
         </div>
 
-        <div className="w-full sm:col-span-2 md:col-span-4 bg-primary text-primary-foreground text-xs font-light text-center py-1">
+        <div className="w-full sm:col-span-2 md:col-span-4 bg-primary text-primary-foreground text-xs font-light text-center py-2 mt-5">
           Copyright 2026 &copy; Shah Samin Yasar
         </div>
       </div>
