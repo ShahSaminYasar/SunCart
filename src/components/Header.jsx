@@ -91,10 +91,7 @@ const Header = () => {
                 <PopoverTrigger asChild>
                   <Avatar>
                     <AvatarImage
-                      src={
-                        data?.user?.image ||
-                        "https://cdn-icons-png.freepik.com/512/6596/6596121.png"
-                      }
+                      src={data?.user?.image || "/assets/user.png"}
                     />
                   </Avatar>
                 </PopoverTrigger>

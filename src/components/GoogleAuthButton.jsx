@@ -2,7 +2,7 @@ import { signIn } from "@/lib/auth-client";
 import { Button } from "./ui/button";
 import toast from "react-hot-toast";
 
-const GoogleAuthButton = () => {
+const GoogleAuthButton = ({redirectPath = "/"}) => {
   return (
     <Button
       type="button"
@@ -10,6 +10,7 @@ const GoogleAuthButton = () => {
       onClick={async () => {
         const res = await signIn.social({
           provider: "google",
+          callbackURL: redirectPath
         });
 
         if (res.error) {

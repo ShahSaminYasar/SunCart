@@ -8,6 +8,7 @@ import { Separator } from "@/components/ui/separator";
 import { signIn } from "@/lib/auth-client";
 import { Eye, EyeClosed } from "lucide-react";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -18,6 +19,11 @@ const LoginPage = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const router = useRouter();
+
+  const searchParams = useSearchParams();
+  const redirectPath = searchParams.get("redirect") || "/";
 
   // States
   const [processing, setProcessing] = useState(false);
@@ -33,7 +39,7 @@ const LoginPage = () => {
         email,
         password,
         rememberMe: true,
-        callbackURL: "/",
+        callbackURL: redirectPath,
       });
 
       if (error) {
@@ -42,6 +48,7 @@ const LoginPage = () => {
 
       if (res) {
         toast.success("Signed in successfully");
+        router.push(redirectPath);
       }
     } catch (error) {
       console.error(error);
@@ -109,11 +116,14 @@ const LoginPage = () => {
         </span>
       </div>
 
-      <GoogleAuthButton />
+      <GoogleAuthButton redirectPath={redirectPath} />
 
       <span className="block text-center text-sm font-light">
         Don&apos;t have an account?{" "}
-        <Link href={"/register"} className="font-medium text-primary">
+        <Link
+          href={`/register?redirect=${encodeURIComponent(redirectPath)}`}
+          className="font-medium text-primary"
+        >
           Register
         </Link>
       </span>
