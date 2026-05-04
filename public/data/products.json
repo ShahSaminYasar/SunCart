@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "name": "UV Protection Sunglasses",
+    "brand": "SunShade",
+    "price": 15,
+    "rating": 4.7,
+    "stock": 10,
+    "description": "Stylish UV protection sunglasses perfect for summer outings.",
+    "image": "https://www.malayaoptical.com/wp-content/uploads/2025/07/sunglasses-uv-eye-protection-scaled.jpg",
+    "category": "Accessories"
+  },
+  {
+    "id": 2,
+    "name": "Beach Straw Hat",
+    "brand": "CoastalWear",
+    "price": 12,
+    "rating": 4.5,
+    "stock": 18,
+    "description": "Lightweight straw hat to protect you from harsh summer sun.",
+    "image": "https://static.vecteezy.com/system/resources/previews/069/872/237/large_2x/summer-beach-straw-hat-on-sand-ocean-view-free-photo.jpeg",
+    "category": "Accessories"
+  },
+  {
+    "id": 3,
+    "name": "Cooling Summer T-Shirt",
+    "brand": "AirFit",
+    "price": 20,
+    "rating": 4.6,
+    "stock": 25,
+    "description": "Breathable cotton t-shirt designed for hot summer days.",
+    "image": "https://ruperhat.com/wp-content/uploads/2025/04/Cool-Summer-T-shirt-sky-blue.jpg",
+    "category": "Clothing"
+  },
+  {
+    "id": 4,
+    "name": "Waterproof Beach Bag",
+    "brand": "WaveCarry",
+    "price": 18,
+    "rating": 4.4,
+    "stock": 14,
+    "description": "Durable waterproof bag for beach essentials.",
+    "image": "https://image.made-in-china.com/365f3j00sMyiezCWkJrG/New-Waterproof-Beach-Tote-Pool-Bags-for-Women-Ladies-Large-Gym-Tote-PVC-Clear-Plastic-Hand-Storage-Bag-Shopping-Bag.webp",
+    "category": "Accessories"
+  },
+  {
+    "id": 5,
+    "name": "SPF 50 Sunscreen Lotion",
+    "brand": "SkinGuard",
+    "price": 10,
+    "rating": 4.8,
+    "stock": 30,
+    "description": "High protection sunscreen for safe sun exposure.",
+    "image": "https://www.usmart.com.bd/products/sunscoop-daily-moisturizer-sunscreen-body-lotion-spf-50-pa-200ml-2025-11-08-09-38-32-2982.jpg",
+    "category": "Skincare"
+  },
+  {
+    "id": 6,
+    "name": "Flip Flops Comfort Sandals",
+    "brand": "BeachStep",
+    "price": 8,
+    "rating": 4.3,
+    "stock": 40,
+    "description": "Soft and lightweight flip flops for everyday summer use.",
+    "image": "https://media.istockphoto.com/id/1325939237/photo/summer-holiday-on-the-pool.jpg?s=612x612&w=0&k=20&c=Wr1P2iTDJqmPKdPrhN4SMbosBf5acBDVLj4dN4KHxj0=",
+    "category": "Footwear"
+  },
+  {
+    "id": 7,
+    "name": "Portable Hand Fan",
+    "brand": "CoolBreeze",
+    "price": 6,
+    "rating": 4.2,
+    "stock": 50,
+    "description": "Mini portable fan for instant cooling anywhere.",
+    "image": "https://rokbucket.rokomari.io/ProductNew20190903/1104X1581/N12_Portable_Mini_Desktop_Air_Cooler_Rec-Non_Brand-7185b-417439.jpg",
+    "category": "Gadgets"
+  },
+  {
+    "id": 8,
+    "name": "Hydration Water Bottle",
+    "brand": "HydroLife",
+    "price": 9,
+    "rating": 4.6,
+    "stock": 35,
+    "description": "Reusable bottle to keep you hydrated in summer heat.",
+    "image": "https://static.vecteezy.com/system/resources/thumbnails/065/473/589/small/elegant-hand-holding-a-water-bottle-nature-landscape-artistic-shot-outdoor-environment-captivating-viewpoint-free-photo.jpeg",
+    "category": "Accessories"
+  },
+  {
+    "id": 9,
+    "name": "Beach Ball Set",
+    "brand": "FunWave",
+    "price": 5,
+    "rating": 4.1,
+    "stock": 60,
+    "description": "Colorful beach ball set for summer fun activities.",
+    "image": "https://img.freepik.com/free-photo/beach-ball-bag-sandy-beach_23-2151977753.jpg?semt=ais_hybrid&w=740&q=80",
+    "category": "Toys"
+  },
+  {
+    "id": 10,
+    "name": "Anti-UV Swim Shorts",
+    "brand": "AquaWear",
+    "price": 22,
+    "rating": 4.7,
+    "stock": 20,
+    "description": "Quick-dry swim shorts with UV protection technology.",
+    "image": "https://www.shutterstock.com/image-photo/swim-shorts-hat-sunscreen-seashells-600nw-2703491999.jpg",
+    "category": "Clothing"
+  },
+  {
+    "id": 11,
+    "name": "Travel Neck Pillow",
+    "brand": "RelaxGo",
+    "price": 14,
+    "rating": 4.5,
+    "stock": 22,
+    "description": "Comfortable neck pillow for summer travel comfort.",
+    "image": "https://www.shutterstock.com/image-photo/swim-shorts-hat-sunscreen-seashells-600nw-2703491999.jpg",
+    "category": "Travel"
+  },
+  {
+    "id": 12,
+    "name": "Cooling Face Mist Spray",
+    "brand": "FreshGlow",
+    "price": 11,
+    "rating": 4.6,
+    "stock": 28,
+    "description": "Refreshing face mist to keep skin cool and hydrated.",
+    "image": "https://www.republicofsoap.com/wp-content/uploads/2025/02/5fa83b17-4cd2-4fc0-8420-fb539a18b50d.jpgtplv-aphluv4xwc-origin-jpeg-scaled.jpeg",
+    "category": "Skincare"
+  }
+]
