@@ -132,6 +132,11 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
 body {
   font-family: var(--font-sans);
 }
